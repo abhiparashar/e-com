@@ -1,15 +1,16 @@
 const User = require('../model/User')
 
 exports.Signup = async(req,res,next)=>{
-    try{
-        const user = await User.create(req.body)
-        res.status(200).json({
-            success:true,
-            data:user
-        })
-    }catch(err){
-        res.send(err)
-    }
+    const user = await User.create(req.body)
+
+    //create token
+    const token = user.getSignedJwttoken();
+    
+    //send the token
+    return res.status(200).json({
+        success:true,
+        data:token
+    })
 }
 
 exports.Signin = async(req,res,next)=>{
