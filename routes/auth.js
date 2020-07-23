@@ -5,8 +5,10 @@ const {
   Signin,
   updateUser,
   deleteUser,
+  getAllUsers
 } = require("../controller/auth");
 
+router.get('/getAllUsers', getAllUsers)
 router.post('/signup', Signup)
 router.post("/signin", Signin)
 router.put("/updateUser", updateUser);

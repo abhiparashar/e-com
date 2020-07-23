@@ -34,6 +34,19 @@ exports.Signin = async(req,res,next)=>{
     }
 }
 
+exports.getAllUsers = async(req,res,next)=>{
+    try {
+        const users = await User.find()
+        res.status(200).json({
+            success:true,
+            count:users.length,
+            data: users
+        }) 
+    } catch (error) {
+        res.send(err)
+    }
+}
+
 exports.updateUser = async(req,res,next)=>{
     try{
         const user = await User.findByIdAndUpdate(req.params.id);

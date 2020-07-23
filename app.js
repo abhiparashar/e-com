@@ -22,7 +22,7 @@ app.use(express.json())
 
 //Route middlewares
 app.use('/api/v1', authRoute)
-app.use("/api/v1", categoryRoute);
+app.use("/api/v1/category", categoryRoute);
 
 
 const port = process.env.PORT || 8000

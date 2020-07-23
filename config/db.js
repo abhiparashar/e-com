@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const createDB = async()=>{
-    const conn = await mongoose.connect("mongodb://localhost/test",{
+    const conn = await mongoose.connect("mongodb://localhost/ecom",{
         useNewUrlParser:true,
         useCreateIndex:true,
         useFindAndModify:false,
