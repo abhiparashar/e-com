@@ -28,3 +28,4 @@ exports.createProduct = (req,res,next)=>{
         }
     })
 }
+
